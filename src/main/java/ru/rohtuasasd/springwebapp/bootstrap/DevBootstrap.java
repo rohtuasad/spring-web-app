@@ -1,4 +1,4 @@
-package ru.rohtuasasd.springwebapp.repository;
+package ru.rohtuasasd.springwebapp.bootstrap;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 import ru.rohtuasasd.springwebapp.model.Author;
 import ru.rohtuasasd.springwebapp.model.Book;
 import ru.rohtuasasd.springwebapp.model.Publisher;
+import ru.rohtuasasd.springwebapp.repository.AuthorRepository;
+import ru.rohtuasasd.springwebapp.repository.BookRepository;
+import ru.rohtuasasd.springwebapp.repository.PublisherRepository;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
@@ -30,7 +33,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         Publisher worx = new Publisher("Worx", "London");
         publisherRepository.save(worx);
-        
+
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "1234", harper);
         eric.getBooks().add(ddd);
