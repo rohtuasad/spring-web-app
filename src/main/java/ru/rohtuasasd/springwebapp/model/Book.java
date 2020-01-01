@@ -89,4 +89,12 @@ public class Book {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
+    }
 }
